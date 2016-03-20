@@ -31,8 +31,6 @@
  *  The return format had been changed to zero-based indices. Please read the above updated description carefully.
  */
 
-#include "../common.h"
-#include "head.h"
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().

@@ -25,9 +25,6 @@
  * Output: 7 -> 0 -> 8
  */
 
-#include "../common.h"
-#include "head.h"
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -35,6 +32,7 @@
  *     struct ListNode *next;
  * };
  */
+
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     struct ListNode* lnhead=(struct ListNode*)calloc(1,sizeof(struct ListNode)),*lncur=lnhead;
 	unsigned char r=0;
