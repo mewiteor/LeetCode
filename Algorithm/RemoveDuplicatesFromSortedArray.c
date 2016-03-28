@@ -32,13 +32,13 @@
  */
 
 int removeDuplicates(int* nums, int numsSize) {
-    if(!nums||numsSize<2)return numsSize;
+    if(!nums||numsSize<2)
+        return numsSize;
     else {
         int i,j=1;
-        for(i=1;i<numsSize;++i) {
-            while(i<numsSize&&nums[i-1]==nums[i])++i;
-            if(i<numsSize) nums[j++]=nums[i];
-        }
+        for(i=1;i<numsSize;++i)
+            if(nums[i-1]!=nums[i])
+                nums[j++]=nums[i];
         return j;
     }
 }
