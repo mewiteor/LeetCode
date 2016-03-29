@@ -47,28 +47,9 @@
  */
 struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
     struct ListNode *tmpA=headA,*tmpB=headB;
-    size_t lenA=0,lenB=0;
-    while(tmpA) {
-        ++lenA;
-        tmpA=tmpA->next;
-    }
-    while(tmpB) {
-        ++lenB;
-        tmpB=tmpB->next;
-    }
-    tmpA=headA;tmpB=headB;
-    if(lenA>lenB) {
-        lenA-=lenB;
-        while(lenA--)
-            tmpA=tmpA->next;
-    } else if(lenA<lenB) {
-        lenB-=lenA;
-        while(lenB--)
-            tmpB=tmpB->next;
-    }
     while(tmpA!=tmpB) {
-        tmpA=tmpA->next;
-        tmpB=tmpB->next;
+        tmpA=tmpA?tmpA->next:headB;
+        tmpB=tmpB?tmpB->next:headA;
     }
     return tmpA;
 }
